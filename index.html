@@ -21,45 +21,27 @@
     }
     body { font-family: var(--font); background: var(--bg3); color: var(--txt); height: 100vh; overflow: hidden; }
 
-    /* ── Setup screen ─────────────────────────────────────────────────── */
-    #setup-screen {
-      position: fixed; inset: 0; background: var(--bg3);
-      display: flex; align-items: center; justify-content: center;
-      z-index: 999; padding: 20px;
-    }
-    .setup-card {
-      background: var(--bg); border: 1px solid var(--border); border-radius: 16px;
-      padding: 32px; width: 100%; max-width: 480px;
-      box-shadow: 0 4px 32px rgba(0,0,0,0.08);
-    }
+    /* ── Setup ── */
+    #setup-screen { position: fixed; inset: 0; background: var(--bg3); display: flex; align-items: center; justify-content: center; z-index: 999; padding: 20px; }
+    .setup-card { background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 32px; width: 100%; max-width: 480px; box-shadow: 0 4px 32px rgba(0,0,0,0.08); }
     .setup-logo { width: 40px; height: 40px; background: var(--blue); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
     .setup-logo svg { width: 20px; height: 20px; }
     .setup-title { font-size: 22px; font-weight: 700; margin-bottom: 6px; letter-spacing: -0.3px; }
     .setup-sub { font-size: 13px; color: var(--txt2); line-height: 1.6; margin-bottom: 28px; }
-    .setup-section { margin-bottom: 20px; }
-    .setup-section-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--txt3); margin-bottom: 8px; }
-    .setup-field label { font-size: 12px; font-weight: 600; display: block; margin-bottom: 5px; color: var(--txt); }
-    .setup-field input {
-      width: 100%; padding: 10px 12px; border-radius: 9px; border: 1px solid var(--border);
-      background: var(--bg2); color: var(--txt); font-size: 13px; font-family: var(--mono);
-      outline: none; transition: border-color 0.15s; margin-bottom: 4px;
-    }
-    .setup-field input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(27,79,216,0.08); }
+    .setup-field label { font-size: 12px; font-weight: 600; display: block; margin-bottom: 5px; }
+    .setup-field input { width: 100%; padding: 10px 12px; border-radius: 9px; border: 1px solid var(--border); background: var(--bg2); color: var(--txt); font-size: 13px; font-family: var(--mono); outline: none; transition: border-color 0.15s; margin-bottom: 4px; }
+    .setup-field input:focus { border-color: var(--blue); }
     .setup-hint { font-size: 11px; color: var(--txt2); line-height: 1.55; margin-bottom: 16px; }
     .setup-hint a { color: var(--blue); text-decoration: none; }
     .setup-hint a:hover { text-decoration: underline; }
-    .setup-btn {
-      width: 100%; padding: 11px; border-radius: 9px; background: var(--blue); color: white;
-      border: none; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.15s;
-      letter-spacing: -0.1px;
-    }
+    .setup-btn { width: 100%; padding: 11px; border-radius: 9px; background: var(--blue); color: white; border: none; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.15s; }
     .setup-btn:hover { background: var(--blue-dk); }
     .setup-btn:disabled { opacity: 0.45; cursor: not-allowed; }
     .setup-error { font-size: 12px; color: var(--red); margin-top: 10px; display: none; padding: 8px 10px; background: var(--red-lt); border-radius: 7px; }
     .setup-divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
     .setup-note { font-size: 11px; color: var(--txt2); line-height: 1.6; background: var(--bg2); border-radius: 8px; padding: 10px 12px; }
 
-    /* ── Main app ─────────────────────────────────────────────────────── */
+    /* ── App layout ── */
     #app { display: none; grid-template-columns: 1fr 1fr; grid-template-rows: 56px 1fr; height: 100vh; }
     #app.visible { display: grid; }
 
@@ -76,7 +58,7 @@
     .dot.mock { background: var(--amber); }
     .hdr-btn { font-size: 12px; padding: 5px 12px; border-radius: 7px; border: 1px solid var(--border); background: var(--bg2); color: var(--txt); cursor: pointer; font-weight: 500; transition: background 0.15s; white-space: nowrap; }
     .hdr-btn:hover { background: var(--bg3); }
-    .key-btn { font-size: 12px; padding: 5px 10px; border-radius: 7px; border: 1px solid var(--border); background: var(--bg2); color: var(--txt2); cursor: pointer; transition: background 0.15s; }
+    .key-btn { font-size: 12px; padding: 5px 10px; border-radius: 7px; border: 1px solid var(--border); background: var(--bg2); color: var(--txt2); cursor: pointer; }
     .key-btn:hover { background: var(--bg3); color: var(--txt); }
 
     /* ── Chat panel ── */
@@ -110,13 +92,9 @@
     .results-scroll { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
 
     /* ── Upload zone ── */
-    .upload-zone {
-      border: 2px dashed var(--border2); border-radius: var(--radius);
-      padding: 28px 20px; text-align: center; cursor: pointer;
-      transition: all 0.2s; background: var(--bg);
-    }
+    .upload-zone { border: 2px dashed var(--border2); border-radius: var(--radius); padding: 24px 20px; text-align: center; cursor: pointer; transition: all 0.2s; background: var(--bg); }
     .upload-zone:hover, .upload-zone.drag-over { border-color: var(--blue); background: var(--blue-lt); }
-    .upload-icon { font-size: 28px; margin-bottom: 10px; }
+    .upload-icon { font-size: 26px; margin-bottom: 8px; }
     .upload-title { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
     .upload-sub { font-size: 12px; color: var(--txt2); line-height: 1.5; margin-bottom: 12px; }
     .upload-btn-row { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
@@ -126,20 +104,39 @@
     .upload-btn.primary:hover { background: var(--blue-dk); }
     #file-input { display: none; }
 
-    /* ── Column mapper ── */
+    /* ── Loaded files list ── */
+    .files-section { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    .files-head { padding: 10px 14px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+    .files-head-title { font-size: 12px; font-weight: 600; }
+    .files-head-sub { font-size: 11px; color: var(--txt2); }
+    .files-list { display: flex; flex-direction: column; }
+    .file-row { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-bottom: 1px solid var(--border); font-size: 12px; }
+    .file-row:last-child { border-bottom: none; }
+    .file-icon { font-size: 16px; flex-shrink: 0; }
+    .file-name { font-weight: 500; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .file-count { font-size: 11px; color: var(--txt2); white-space: nowrap; }
+    .file-source { font-size: 10px; padding: 2px 7px; border-radius: 99px; background: var(--green-lt); color: #15803D; font-weight: 500; white-space: nowrap; }
+    .file-source.mock { background: var(--amber-lt); color: #B45309; }
+    .file-remove { width: 22px; height: 22px; border-radius: 5px; border: 1px solid var(--border); background: var(--bg2); color: var(--txt2); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; transition: all 0.15s; }
+    .file-remove:hover { background: var(--red-lt); color: var(--red); border-color: #FECACA; }
+    .files-footer { padding: 10px 14px; border-top: 1px solid var(--border); display: flex; gap: 8px; align-items: center; }
+    .total-badge { font-size: 12px; color: var(--txt2); flex: 1; }
+    .total-badge b { color: var(--txt); }
+
+    /* ── Mapper ── */
     .mapper-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
-    .mapper-head { padding: 12px 14px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+    .mapper-head { padding: 12px 14px; border-bottom: 1px solid var(--border); }
     .mapper-title { font-size: 13px; font-weight: 600; }
     .mapper-sub { font-size: 11px; color: var(--txt2); margin-top: 2px; }
     .mapper-body { padding: 14px; display: flex; flex-direction: column; gap: 8px; }
     .map-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; align-items: center; }
-    .map-label { font-size: 12px; font-weight: 500; color: var(--txt); }
+    .map-label { font-size: 12px; font-weight: 500; }
     .map-label span { font-size: 10px; color: var(--txt2); font-weight: 400; display: block; margin-top: 1px; }
     .map-select { width: 100%; padding: 6px 8px; border-radius: 7px; border: 1px solid var(--border); background: var(--bg2); color: var(--txt); font-size: 12px; outline: none; cursor: pointer; }
     .map-select:focus { border-color: var(--blue); }
     .mapper-footer { padding: 12px 14px; border-top: 1px solid var(--border); display: flex; gap: 8px; }
 
-    /* ── Account cards ── */
+    /* ── Cards ── */
     .account-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; }
     .account-card.high   { border-left: 3px solid var(--red); }
     .account-card.medium { border-left: 3px solid var(--amber); }
@@ -157,6 +154,7 @@
     .stat-val { font-size: 12px; font-weight: 600; margin-top: 2px; }
     .products-row { background: var(--bg2); border-radius: 6px; padding: 6px 8px; }
     .action-row { font-size: 11px; color: var(--blue); background: var(--blue-lt); border-radius: 6px; padding: 7px 9px; line-height: 1.5; }
+    .source-tag { font-size: 10px; color: var(--txt3); }
 
     .thinking-block { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
     .thinking-head { padding: 8px 12px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 7px; font-size: 11px; font-weight: 700; color: var(--txt2); text-transform: uppercase; letter-spacing: 0.05em; }
@@ -169,17 +167,6 @@
     .empty-icon { font-size: 36px; opacity: 0.35; }
     .empty-title { font-size: 14px; font-weight: 600; color: var(--txt2); }
     .empty-sub { font-size: 12px; color: var(--txt2); opacity: 0.7; max-width: 220px; line-height: 1.55; }
-
-    /* ── Schema reference ── */
-    .schema-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
-    .schema-head { padding: 10px 14px; border-bottom: 1px solid var(--border); font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: space-between; }
-    .schema-body { padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; }
-    .schema-row { display: flex; gap: 8px; align-items: flex-start; font-size: 11px; }
-    .schema-col { font-family: var(--mono); color: var(--blue); font-size: 11px; min-width: 130px; flex-shrink: 0; }
-    .schema-desc { color: var(--txt2); line-height: 1.4; }
-    .schema-req { font-size: 9px; padding: 1px 5px; border-radius: 3px; font-weight: 600; flex-shrink: 0; }
-    .schema-req.req { background: #FEF2F2; color: #DC2626; }
-    .schema-req.opt { background: var(--bg2); color: var(--txt3); }
 
     @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
     @keyframes spin  { to { transform: rotate(360deg); } }
@@ -199,7 +186,7 @@
 </head>
 <body>
 
-<!-- ── Setup screen ─────────────────────────────────────────────────────── -->
+<!-- Setup screen -->
 <div id="setup-screen">
   <div class="setup-card">
     <div class="setup-logo">
@@ -211,31 +198,20 @@
       </svg>
     </div>
     <div class="setup-title">Account Health Agent</div>
-    <div class="setup-sub">AI-powered churn risk analysis for any customer dataset. Import your own Excel or CSV file — no database required.</div>
-
-    <div class="setup-section">
-      <div class="setup-section-label">Step 1 — Claude API Key</div>
-      <div class="setup-field">
-        <label>API Key</label>
-        <input type="password" id="key-input" placeholder="sk-ant-api03-…" onkeydown="if(event.key==='Enter')startApp()" />
-      </div>
-      <div class="setup-hint">
-        Get a free key at <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a> → API Keys → Create Key.
-        Your key is stored in browser memory only and clears when you close the tab.
-      </div>
+    <div class="setup-sub">Import one or more CSV or Excel files, map your columns, and get AI-powered churn risk analysis across your entire customer base.</div>
+    <div class="setup-field">
+      <label>Claude API Key</label>
+      <input type="password" id="key-input" placeholder="sk-ant-api03-…" onkeydown="if(event.key==='Enter')startApp()" />
     </div>
-
+    <div class="setup-hint">Get a free key at <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a> → API Keys → Create Key. Stored in browser memory only.</div>
     <button class="setup-btn" id="start-btn" onclick="startApp()">Launch app →</button>
     <div class="setup-error" id="setup-error"></div>
-
     <hr class="setup-divider" />
-    <div class="setup-note">
-      🔒 Nothing is stored or sent to any server except the Claude API. Your data and key live only in this browser session.
-    </div>
+    <div class="setup-note">🔒 Your key and data never leave your browser except for the Claude API call. Nothing is stored or logged.</div>
   </div>
 </div>
 
-<!-- ── Main app ──────────────────────────────────────────────────────────── -->
+<!-- Main app -->
 <div id="app">
   <header class="header">
     <div class="logo">
@@ -251,8 +227,8 @@
       <div class="hdr-sub">Powered by Claude AI</div>
     </div>
     <div class="hdr-right">
-      <div class="pill"><div class="dot mock" id="status-dot"></div><span id="status-text">No data loaded</span></div>
-      <button class="hdr-btn" onclick="showUpload()">📂 Import data</button>
+      <div class="pill"><div class="dot mock" id="status-dot"></div><span id="status-text">No data</span></div>
+      <button class="hdr-btn" onclick="showDataManager()">📂 Manage data</button>
       <button class="key-btn" onclick="resetKey()" title="Change API key">🔑</button>
     </div>
   </header>
@@ -265,7 +241,7 @@
     <div class="messages" id="messages">
       <div class="msg agent">
         <div class="msg-label">Agent</div>
-        <div class="bubble" id="welcome-msg">Welcome — click <b>📂 Import data</b> to load your customer data from an Excel or CSV file. You can also use the mock data to explore the app first.</div>
+        <div class="bubble">Welcome — click <b>📂 Manage data</b> to import your customer files. You can load multiple CSV or Excel files and they'll be combined into one dataset.</div>
       </div>
     </div>
     <div class="input-area">
@@ -274,81 +250,70 @@
         <button class="chip" onclick="useChip(this)">Who hasn't been contacted in 60+ days?</button>
         <button class="chip" onclick="useChip(this)">Show renewals due in 90 days</button>
         <button class="chip" onclick="useChip(this)">What's my total revenue at risk?</button>
-        <button class="chip" onclick="useChip(this)">Which single-product accounts should I upsell?</button>
+        <button class="chip" onclick="useChip(this)">Which accounts should I call first this week?</button>
       </div>
       <div class="input-row">
-        <textarea class="chat-input" id="chat-input" rows="1"
-          placeholder="Ask about your accounts…"
-          onkeydown="onKey(event)" oninput="resize(this)"></textarea>
+        <textarea class="chat-input" id="chat-input" rows="1" placeholder="Ask about your accounts…" onkeydown="onKey(event)" oninput="resize(this)"></textarea>
         <button class="send-btn" id="send-btn" onclick="send()">
-          <svg viewBox="0 0 16 16" fill="none">
-            <path d="M2 8h12M8 2l6 6-6 6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h12M8 2l6 6-6 6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
       </div>
     </div>
   </section>
 
   <section class="results-panel">
-    <div class="panel-top">
-      <span class="panel-label">Agent results</span>
-    </div>
+    <div class="panel-top"><span class="panel-label">Agent results</span></div>
     <div class="results-scroll" id="results">
-      <div class="empty-state" id="empty-results">
+      <div class="empty-state">
         <div class="empty-icon">📊</div>
         <div class="empty-title">No data loaded yet</div>
-        <div class="empty-sub">Import a CSV or Excel file to get started, or load the mock data to explore.</div>
+        <div class="empty-sub">Import one or more CSV or Excel files to get started.</div>
       </div>
     </div>
   </section>
 </div>
 
-<!-- ── Upload / mapper panel (shown in results area) ─────────────────────── -->
 <script>
-// ─── STATE ────────────────────────────────────────────────────────────────────
+// ── STATE ─────────────────────────────────────────────────────────────────────
 let CLAUDE_KEY = '';
-let accounts   = [];
-let colMapping = {};
-let rawHeaders = [];
-let loading    = false;
-let dataSource = 'none'; // 'none' | 'mock' | 'file'
+let loadedFiles = [];   // [{name, rows, mapping, source}]
+let accounts    = [];   // merged, mapped rows across all files
+let loading     = false;
 
-// ─── MOCK DATA ────────────────────────────────────────────────────────────────
-const MOCK = [
-  {name:'Tulsa Law Group',industry:'Legal',mrr:1200,region:'OK-Tulsa',products:'DocuWare',renewalDays:18,daysSinceContact:72},
-  {name:'MidWest Medical Center',industry:'Healthcare',mrr:3400,region:'OK-OKC',products:'DocuWare, PaperCut, CoreFax',renewalDays:210,daysSinceContact:12},
-  {name:'Broken Arrow CPA Group',industry:'Finance',mrr:800,region:'OK-Tulsa',products:'DocuWare',renewalDays:45,daysSinceContact:91},
-  {name:'Cherokee Nation Businesses',industry:'Government',mrr:5200,region:'OK-Tulsa',products:'DocuWare, PaperCut',renewalDays:88,daysSinceContact:8},
-  {name:'OKC Family Dentistry',industry:'Healthcare',mrr:420,region:'OK-OKC',products:'PaperCut',renewalDays:22,daysSinceContact:65},
-  {name:'Sooner State Logistics',industry:'Transportation',mrr:2800,region:'OK-OKC',products:'DocuWare, CoreFax',renewalDays:112,daysSinceContact:44},
-  {name:'Edmond Public Schools',industry:'Education',mrr:4100,region:'OK-OKC',products:'DocuWare, PaperCut',renewalDays:290,daysSinceContact:6},
-  {name:'Red Rock Realty',industry:'Real Estate',mrr:650,region:'OK-Tulsa',products:'DocuWare',renewalDays:14,daysSinceContact:83},
-  {name:'Sapulpa Manufacturing',industry:'Manufacturing',mrr:1900,region:'OK-Tulsa',products:'PaperCut, CoreFax',renewalDays:67,daysSinceContact:31},
-  {name:'Stillwater Insurance Co',industry:'Insurance',mrr:1450,region:'OK-OKC',products:'DocuWare',renewalDays:9,daysSinceContact:77},
-  {name:'Claremore Auto Group',industry:'Automotive',mrr:730,region:'OK-Tulsa',products:'PaperCut',renewalDays:155,daysSinceContact:102},
-  {name:'OSU Medical Center',industry:'Healthcare',mrr:6800,region:'OK-OKC',products:'DocuWare, PaperCut, CoreFax',renewalDays:178,daysSinceContact:9},
-  {name:'Tahlequah City Bank',industry:'Finance',mrr:1100,region:'OK-Tulsa',products:'DocuWare, CoreFax',renewalDays:41,daysSinceContact:58},
-  {name:'Green Country HVAC',industry:'Construction',mrr:380,region:'OK-Tulsa',products:'PaperCut',renewalDays:8,daysSinceContact:95},
-  {name:'Norman Regional Hospital',industry:'Healthcare',mrr:5900,region:'OK-OKC',products:'DocuWare, PaperCut',renewalDays:77,daysSinceContact:15},
-  {name:'Bartlesville Energy Co',industry:'Energy',mrr:2200,region:'OK-Tulsa',products:'DocuWare, PaperCut, CoreFax',renewalDays:33,daysSinceContact:48},
-  {name:'Yukon Pediatrics',industry:'Healthcare',mrr:310,region:'OK-OKC',products:'PaperCut',renewalDays:19,daysSinceContact:88},
-  {name:'Enid Oil Services',industry:'Energy',mrr:1650,region:'OK-OKC',products:'DocuWare, CoreFax',renewalDays:95,daysSinceContact:19},
-  {name:'Durant Motor Sports',industry:'Automotive',mrr:290,region:'OK-Tulsa',products:'PaperCut',renewalDays:25,daysSinceContact:74},
-  {name:'Sand Springs Printing',industry:'Manufacturing',mrr:220,region:'OK-Tulsa',products:'PaperCut',renewalDays:11,daysSinceContact:110},
-];
-
-// ─── REQUIRED FIELDS ─────────────────────────────────────────────────────────
 const FIELDS = [
-  { key:'name',             label:'Account Name',        hint:'Company or customer name',              required:true  },
-  { key:'mrr',              label:'Monthly Revenue',     hint:'MRR, ARR, or any revenue figure',       required:true  },
-  { key:'renewalDays',      label:'Days Until Renewal',  hint:'Days until contract expires/renews',    required:true  },
-  { key:'daysSinceContact', label:'Days Since Contact',  hint:'Days since last outreach or activity',  required:true  },
-  { key:'industry',         label:'Industry',            hint:'Sector or vertical',                    required:false },
-  { key:'region',           label:'Region / Territory',  hint:'Geographic territory or sales region',  required:false },
-  { key:'products',         label:'Products',            hint:'Products or services the account uses', required:false },
+  { key:'name',             label:'Account Name',       hint:'Company or customer name',             required:true  },
+  { key:'mrr',              label:'Monthly Revenue',    hint:'MRR, ARR, or any revenue figure',      required:true  },
+  { key:'renewalDays',      label:'Days Until Renewal', hint:'Days until contract expires/renews',   required:true  },
+  { key:'daysSinceContact', label:'Days Since Contact', hint:'Days since last outreach or activity', required:true  },
+  { key:'industry',         label:'Industry',           hint:'Sector or vertical',                   required:false },
+  { key:'region',           label:'Region / Territory', hint:'Geographic territory or sales region', required:false },
+  { key:'products',         label:'Products',           hint:'Products or services',                 required:false },
 ];
 
-// ─── SETUP ────────────────────────────────────────────────────────────────────
+const MOCK = [
+  {name:'Tulsa Law Group',industry:'Legal',mrr:1200,region:'OK-Tulsa',products:'DocuWare',renewalDays:18,daysSinceContact:72,_source:'Mock data'},
+  {name:'MidWest Medical Center',industry:'Healthcare',mrr:3400,region:'OK-OKC',products:'DocuWare, PaperCut, CoreFax',renewalDays:210,daysSinceContact:12,_source:'Mock data'},
+  {name:'Broken Arrow CPA Group',industry:'Finance',mrr:800,region:'OK-Tulsa',products:'DocuWare',renewalDays:45,daysSinceContact:91,_source:'Mock data'},
+  {name:'Cherokee Nation Businesses',industry:'Government',mrr:5200,region:'OK-Tulsa',products:'DocuWare, PaperCut',renewalDays:88,daysSinceContact:8,_source:'Mock data'},
+  {name:'OKC Family Dentistry',industry:'Healthcare',mrr:420,region:'OK-OKC',products:'PaperCut',renewalDays:22,daysSinceContact:65,_source:'Mock data'},
+  {name:'Sooner State Logistics',industry:'Transportation',mrr:2800,region:'OK-OKC',products:'DocuWare, CoreFax',renewalDays:112,daysSinceContact:44,_source:'Mock data'},
+  {name:'Edmond Public Schools',industry:'Education',mrr:4100,region:'OK-OKC',products:'DocuWare, PaperCut',renewalDays:290,daysSinceContact:6,_source:'Mock data'},
+  {name:'Red Rock Realty',industry:'Real Estate',mrr:650,region:'OK-Tulsa',products:'DocuWare',renewalDays:14,daysSinceContact:83,_source:'Mock data'},
+  {name:'Sapulpa Manufacturing',industry:'Manufacturing',mrr:1900,region:'OK-Tulsa',products:'PaperCut, CoreFax',renewalDays:67,daysSinceContact:31,_source:'Mock data'},
+  {name:'Stillwater Insurance Co',industry:'Insurance',mrr:1450,region:'OK-OKC',products:'DocuWare',renewalDays:9,daysSinceContact:77,_source:'Mock data'},
+  {name:'Claremore Auto Group',industry:'Automotive',mrr:730,region:'OK-Tulsa',products:'PaperCut',renewalDays:155,daysSinceContact:102,_source:'Mock data'},
+  {name:'OSU Medical Center',industry:'Healthcare',mrr:6800,region:'OK-OKC',products:'DocuWare, PaperCut, CoreFax',renewalDays:178,daysSinceContact:9,_source:'Mock data'},
+  {name:'Tahlequah City Bank',industry:'Finance',mrr:1100,region:'OK-Tulsa',products:'DocuWare, CoreFax',renewalDays:41,daysSinceContact:58,_source:'Mock data'},
+  {name:'Green Country HVAC',industry:'Construction',mrr:380,region:'OK-Tulsa',products:'PaperCut',renewalDays:8,daysSinceContact:95,_source:'Mock data'},
+  {name:'Norman Regional Hospital',industry:'Healthcare',mrr:5900,region:'OK-OKC',products:'DocuWare, PaperCut',renewalDays:77,daysSinceContact:15,_source:'Mock data'},
+  {name:'Bartlesville Energy Co',industry:'Energy',mrr:2200,region:'OK-Tulsa',products:'DocuWare, PaperCut, CoreFax',renewalDays:33,daysSinceContact:48,_source:'Mock data'},
+  {name:'Yukon Pediatrics',industry:'Healthcare',mrr:310,region:'OK-OKC',products:'PaperCut',renewalDays:19,daysSinceContact:88,_source:'Mock data'},
+  {name:'Enid Oil Services',industry:'Energy',mrr:1650,region:'OK-OKC',products:'DocuWare, CoreFax',renewalDays:95,daysSinceContact:19,_source:'Mock data'},
+  {name:'Durant Motor Sports',industry:'Automotive',mrr:290,region:'OK-Tulsa',products:'PaperCut',renewalDays:25,daysSinceContact:74,_source:'Mock data'},
+  {name:'Sand Springs Printing',industry:'Manufacturing',mrr:220,region:'OK-Tulsa',products:'PaperCut',renewalDays:11,daysSinceContact:110,_source:'Mock data'},
+];
+
+// ── SETUP ─────────────────────────────────────────────────────────────────────
 async function startApp() {
   const key = document.getElementById('key-input').value.trim();
   const err = document.getElementById('setup-error');
@@ -362,14 +327,14 @@ async function startApp() {
   try {
     const r = await fetch('https://api.anthropic.com/v1/messages', {
       method:'POST',
-      headers:{ 'Content-Type':'application/json', 'x-api-key':key, 'anthropic-version':'2023-06-01', 'anthropic-dangerous-direct-browser-access':'true' },
-      body: JSON.stringify({ model:'claude-sonnet-4-6', max_tokens:10, messages:[{role:'user',content:'hi'}] })
+      headers:{'Content-Type':'application/json','x-api-key':key,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
+      body: JSON.stringify({model:'claude-sonnet-4-6',max_tokens:10,messages:[{role:'user',content:'hi'}]})
     });
     if (!r.ok) { const e=await r.json().catch(()=>({})); throw new Error(e.error?.message||`API error ${r.status}`); }
     CLAUDE_KEY = key;
     document.getElementById('setup-screen').style.display = 'none';
     document.getElementById('app').classList.add('visible');
-    showUpload();
+    showDataManager();
   } catch(e) {
     err.textContent = 'Key check failed: ' + e.message;
     err.style.display = 'block';
@@ -378,58 +343,133 @@ async function startApp() {
 }
 
 function resetKey() {
-  if (!confirm('Clear your API key and return to the setup screen?')) return;
-  CLAUDE_KEY = ''; accounts = []; dataSource = 'none';
-  document.getElementById('key-input').value = '';
-  document.getElementById('setup-error').style.display = 'none';
-  document.getElementById('start-btn').textContent = 'Launch app →';
-  document.getElementById('start-btn').disabled = false;
-  document.getElementById('setup-screen').style.display = 'flex';
+  if (!confirm('Clear your API key and return to setup?')) return;
+  CLAUDE_KEY=''; loadedFiles=[]; accounts=[];
+  document.getElementById('key-input').value='';
+  document.getElementById('setup-error').style.display='none';
+  document.getElementById('start-btn').textContent='Launch app →';
+  document.getElementById('start-btn').disabled=false;
+  document.getElementById('setup-screen').style.display='flex';
   document.getElementById('app').classList.remove('visible');
 }
 
-// ─── UPLOAD UI ────────────────────────────────────────────────────────────────
-function showUpload() {
+// ── DATA MANAGER ──────────────────────────────────────────────────────────────
+function showDataManager() {
+  const total = accounts.length;
   const panel = document.getElementById('results');
+
+  let filesHtml = '';
+  if (loadedFiles.length) {
+    filesHtml = `
+    <div class="files-section">
+      <div class="files-head">
+        <div class="files-head-title">Loaded files</div>
+        <div class="files-head-sub">${loadedFiles.length} file${loadedFiles.length>1?'s':''} · ${total} total accounts</div>
+      </div>
+      <div class="files-list">
+        ${loadedFiles.map((f,i) => `
+          <div class="file-row">
+            <div class="file-icon">${f.source==='mock'?'🗂️':'📄'}</div>
+            <div class="file-name">${x(f.name)}</div>
+            <div class="file-count">${f.rows} rows</div>
+            <div class="file-source ${f.source==='mock'?'mock':''}">${f.source==='mock'?'Mock':'Imported'}</div>
+            <button class="file-remove" onclick="removeFile(${i})" title="Remove">✕</button>
+          </div>
+        `).join('')}
+      </div>
+      <div class="files-footer">
+        <div class="total-badge"><b>${total} accounts</b> ready to analyze</div>
+        <button class="upload-btn primary" onclick="analyzeNow()">Analyze now →</button>
+      </div>
+    </div>`;
+  }
+
   panel.innerHTML = `
     <div class="upload-zone" id="upload-zone"
       ondragover="dragOver(event)" ondragleave="dragLeave(event)" ondrop="dropFile(event)">
       <div class="upload-icon">📁</div>
-      <div class="upload-title">Import your customer data</div>
-      <div class="upload-sub">Drop a CSV or Excel file here, or choose an option below.<br>Your data never leaves your browser.</div>
+      <div class="upload-title">${loadedFiles.length ? 'Add another file' : 'Import your customer data'}</div>
+      <div class="upload-sub">Drop CSV or Excel files here — you can add as many as you want.<br>Each file goes through column mapping then gets merged into one dataset.</div>
       <div class="upload-btn-row">
         <button class="upload-btn primary" onclick="document.getElementById('file-input').click()">Choose file (.csv or .xlsx)</button>
-        <button class="upload-btn" onclick="loadMock()">Use mock data instead</button>
+        ${!loadedFiles.find(f=>f.source==='mock') ? `<button class="upload-btn" onclick="loadMock()">Use mock data</button>` : ''}
       </div>
       <input type="file" id="file-input" accept=".csv,.xlsx,.xls" onchange="handleFile(this.files[0])" />
     </div>
-    <div class="schema-card">
-      <div class="schema-head">
-        <span>Expected columns</span>
-        <span style="font-size:11px;color:var(--txt2);font-weight:400">Your column names don't need to match — you'll map them after upload</span>
-      </div>
-      <div class="schema-body">
-        ${FIELDS.map(f=>`
-          <div class="schema-row">
-            <div class="schema-col">${f.key}</div>
-            <div class="schema-desc">${f.hint}</div>
-            <div class="schema-req ${f.required?'req':'opt'}">${f.required?'required':'optional'}</div>
-          </div>
-        `).join('')}
-      </div>
+    ${filesHtml}`;
+}
+
+function removeFile(index) {
+  loadedFiles.splice(index, 1);
+  rebuildAccounts();
+  updateHeader();
+  showDataManager();
+  if (loadedFiles.length === 0) {
+    addMsg('agent', 'All files removed. Import a new file or use mock data to get started.');
+  } else {
+    addMsg('agent', `File removed. <b>${accounts.length} accounts</b> remaining across ${loadedFiles.length} file${loadedFiles.length>1?'s':''}.`);
+  }
+}
+
+function rebuildAccounts() {
+  accounts = loadedFiles.flatMap(f => f.accounts);
+}
+
+function analyzeNow() {
+  showReadyState();
+  document.getElementById('chips').style.display = 'flex';
+}
+
+function showReadyState() {
+  document.getElementById('results').innerHTML = `
+    <div class="empty-state">
+      <div class="empty-icon">🤖</div>
+      <div class="empty-title">Claude is ready</div>
+      <div class="empty-sub">Ask a question to analyze your ${accounts.length} accounts across ${loadedFiles.length} file${loadedFiles.length>1?'s':''}.</div>
     </div>`;
 }
 
-function dragOver(e)  { e.preventDefault(); document.getElementById('upload-zone').classList.add('drag-over'); }
-function dragLeave(e) { document.getElementById('upload-zone').classList.remove('drag-over'); }
+function loadMock() {
+  const mockFile = {
+    name: 'Mock data (20 accounts)',
+    source: 'mock',
+    rows: MOCK.length,
+    accounts: MOCK
+  };
+  loadedFiles.push(mockFile);
+  rebuildAccounts();
+  updateHeader();
+  addMsg('agent', `Loaded <b>20 mock accounts</b>. You can add more files on top of this, or ask questions now.`);
+  showDataManager();
+}
+
+function updateHeader() {
+  const dot   = document.getElementById('status-dot');
+  const text  = document.getElementById('status-text');
+  const badge = document.getElementById('data-badge');
+  if (accounts.length > 0) {
+    dot.className = 'dot live';
+    text.textContent = loadedFiles.length + ' file' + (loadedFiles.length>1?'s':'') + ' loaded';
+    badge.textContent = accounts.length + ' accounts';
+  } else {
+    dot.className = 'dot mock';
+    text.textContent = 'No data';
+    badge.textContent = 'No data loaded';
+  }
+}
+
+// ── FILE PARSING ──────────────────────────────────────────────────────────────
+function dragOver(e)  { e.preventDefault(); document.getElementById('upload-zone')?.classList.add('drag-over'); }
+function dragLeave(e) { document.getElementById('upload-zone')?.classList.remove('drag-over'); }
 function dropFile(e)  { e.preventDefault(); dragLeave(e); const f=e.dataTransfer.files[0]; if(f) handleFile(f); }
 
-// ─── FILE PARSING ─────────────────────────────────────────────────────────────
 function handleFile(file) {
   if (!file) return;
+  // Reset file input so same file can be re-added if needed
+  const fi = document.getElementById('file-input');
+  if (fi) fi.value = '';
   const ext = file.name.split('.').pop().toLowerCase();
   const reader = new FileReader();
-
   if (ext === 'csv') {
     reader.onload = e => parseCSV(e.target.result, file.name);
     reader.readAsText(file);
@@ -442,41 +482,38 @@ function handleFile(file) {
 }
 
 function parseCSV(text, filename) {
-  const lines = text.trim().split('\n');
+  const lines = text.trim().split('\n').filter(l => l.trim());
   if (lines.length < 2) { alert('CSV appears to be empty.'); return; }
   const headers = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g,''));
   const rows = lines.slice(1).map(line => {
     const vals = line.split(',').map(v => v.trim().replace(/^"|"$/g,''));
     const obj = {};
-    headers.forEach((h,i) => obj[h] = vals[i] || '');
+    headers.forEach((h,i) => obj[h] = vals[i]||'');
     return obj;
   }).filter(r => Object.values(r).some(v => v));
-  rawHeaders = headers;
-  showMapper(rows, filename);
+  showMapper(rows, headers, filename);
 }
 
 function parseXLSX(buffer, filename) {
   try {
-    const wb = XLSX.read(buffer, { type:'arraybuffer' });
+    const wb = XLSX.read(buffer, {type:'arraybuffer'});
     const ws = wb.Sheets[wb.SheetNames[0]];
-    const rows = XLSX.utils.sheet_to_json(ws, { defval:'' });
+    const rows = XLSX.utils.sheet_to_json(ws, {defval:''});
     if (!rows.length) { alert('Spreadsheet appears to be empty.'); return; }
-    rawHeaders = Object.keys(rows[0]);
-    showMapper(rows, filename);
+    showMapper(rows, Object.keys(rows[0]), filename);
   } catch(e) { alert('Could not read file: ' + e.message); }
 }
 
-// ─── COLUMN MAPPER ────────────────────────────────────────────────────────────
-let pendingRows = [];
+// ── COLUMN MAPPER ─────────────────────────────────────────────────────────────
+let pendingRows = [], pendingHeaders = [], pendingFilename = '';
 
-function showMapper(rows, filename) {
-  pendingRows = rows;
-  const panel = document.getElementById('results');
+function showMapper(rows, headers, filename) {
+  pendingRows = rows; pendingHeaders = headers; pendingFilename = filename;
 
-  // Auto-detect column matches
+  // Auto-detect
   const autoMap = {};
   FIELDS.forEach(f => {
-    const match = rawHeaders.find(h => {
+    const match = headers.find(h => {
       const hn = h.toLowerCase().replace(/[^a-z0-9]/g,'');
       const aliases = {
         name:             ['name','account','company','customer','client','accountname','companyname'],
@@ -487,120 +524,79 @@ function showMapper(rows, filename) {
         region:           ['region','territory','area','location','zone','market'],
         products:         ['product','products','service','services','package','plan','tier'],
       };
-      return (aliases[f.key]||[]).some(a => hn.includes(a) || a.includes(hn));
+      return (aliases[f.key]||[]).some(a => hn.includes(a)||a.includes(hn));
     });
-    autoMap[f.key] = match || '';
+    autoMap[f.key] = match||'';
   });
 
-  panel.innerHTML = `
+  document.getElementById('results').innerHTML = `
     <div class="mapper-card">
       <div class="mapper-head">
-        <div>
-          <div class="mapper-title">Map your columns</div>
-          <div class="mapper-sub">${x(filename)} · ${rows.length} rows · ${rawHeaders.length} columns detected</div>
-        </div>
+        <div class="mapper-title">Map columns — ${x(filename)}</div>
+        <div class="mapper-sub">${rows.length} rows · ${headers.length} columns detected</div>
       </div>
       <div class="mapper-body">
         ${FIELDS.map(f=>`
           <div class="map-row">
-            <div class="map-label">
-              ${f.label}
-              <span>${f.hint} ${f.required?'<b style="color:var(--red)">*</b>':''}</span>
-            </div>
+            <div class="map-label">${f.label}<span>${f.hint}${f.required?' <b style="color:var(--red)">*</b>':''}</span></div>
             <select class="map-select" id="map-${f.key}">
               <option value="">— skip —</option>
-              ${rawHeaders.map(h=>`<option value="${x(h)}" ${autoMap[f.key]===h?'selected':''}>${x(h)}</option>`).join('')}
+              ${headers.map(h=>`<option value="${x(h)}" ${autoMap[f.key]===h?'selected':''}>${x(h)}</option>`).join('')}
             </select>
           </div>
         `).join('')}
       </div>
       <div class="mapper-footer">
-        <button class="upload-btn primary" onclick="applyMapping()">Load ${rows.length} accounts →</button>
-        <button class="upload-btn" onclick="showUpload()">← Back</button>
+        <button class="upload-btn primary" onclick="applyMapping()">Add ${rows.length} accounts →</button>
+        <button class="upload-btn" onclick="showDataManager()">← Cancel</button>
       </div>
     </div>`;
 }
 
 function applyMapping() {
-  colMapping = {};
-  let missing = [];
+  const mapping = {};
+  const missing = [];
   FIELDS.forEach(f => {
     const val = document.getElementById('map-'+f.key)?.value;
-    if (val) colMapping[f.key] = val;
+    if (val) mapping[f.key] = val;
     else if (f.required) missing.push(f.label);
   });
   if (missing.length) { alert('Please map required fields: ' + missing.join(', ')); return; }
 
-  accounts = pendingRows.map(row => {
-    const a = {};
-    FIELDS.forEach(f => {
-      if (colMapping[f.key]) a[f.key] = row[colMapping[f.key]] ?? '';
-    });
-    a.mrr             = parseFloat(String(a.mrr||'0').replace(/[^0-9.]/g,'')) || 0;
-    a.renewalDays     = parseInt(a.renewalDays)     || 0;
-    a.daysSinceContact= parseInt(a.daysSinceContact)|| 0;
+  const mapped = pendingRows.map(row => {
+    const a = {_source: pendingFilename};
+    FIELDS.forEach(f => { if (mapping[f.key]) a[f.key] = row[mapping[f.key]]??''; });
+    a.mrr              = parseFloat(String(a.mrr||'0').replace(/[^0-9.]/g,''))||0;
+    a.renewalDays      = parseInt(a.renewalDays)||0;
+    a.daysSinceContact = parseInt(a.daysSinceContact)||0;
     return a;
   }).filter(a => a.name);
 
-  if (!accounts.length) { alert('No valid rows found after mapping. Check your column selections.'); return; }
-  dataSource = 'file';
+  if (!mapped.length) { alert('No valid rows found after mapping. Check your column selections.'); return; }
+
+  loadedFiles.push({ name: pendingFilename, source: 'file', rows: mapped.length, accounts: mapped });
+  rebuildAccounts();
   updateHeader();
-  addMsg('agent', `Loaded <b>${accounts.length} accounts</b> from your file. Ask me anything about your data.`);
-  showEmptyResults();
-  document.getElementById('chips').style.display = 'flex';
+  addMsg('agent', `Added <b>${mapped.length} accounts</b> from <b>${x(pendingFilename)}</b>. Total: <b>${accounts.length} accounts</b> across ${loadedFiles.length} file${loadedFiles.length>1?'s':''}. Add more files or start asking questions.`);
+  showDataManager();
 }
 
-function loadMock() {
-  accounts   = MOCK;
-  dataSource = 'mock';
-  updateHeader();
-  addMsg('agent', 'Loaded <b>20 mock accounts</b>. Ask me anything — or import your own data anytime using the Import button.');
-  showEmptyResults();
-  document.getElementById('chips').style.display = 'flex';
-}
-
-function showEmptyResults() {
-  document.getElementById('results').innerHTML = `
-    <div class="empty-state">
-      <div class="empty-icon">🤖</div>
-      <div class="empty-title">Claude is ready</div>
-      <div class="empty-sub">Ask a question to analyze your ${accounts.length} accounts.</div>
-    </div>`;
-}
-
-function updateHeader() {
-  const dot  = document.getElementById('status-dot');
-  const text = document.getElementById('status-text');
-  const badge= document.getElementById('data-badge');
-  if (dataSource === 'file') {
-    dot.className = 'dot live';
-    text.textContent = 'File loaded';
-    badge.textContent = accounts.length + ' accounts';
-  } else if (dataSource === 'mock') {
-    dot.className = 'dot mock';
-    text.textContent = 'Mock data';
-    badge.textContent = accounts.length + ' mock accounts';
-  } else {
-    dot.className = 'dot';
-    text.textContent = 'No data';
-    badge.textContent = 'No data loaded';
-  }
-}
-
-// ─── SYSTEM PROMPT ────────────────────────────────────────────────────────────
+// ── CLAUDE API ────────────────────────────────────────────────────────────────
 function buildSystem() {
-  const mappedFields = FIELDS.filter(f => colMapping[f.key] || dataSource==='mock').map(f=>f.label).join(', ');
-  return `You are an Account Health Agent. You analyze customer account data to identify churn risk, renewal urgency, and recommended actions for account managers.
+  const sources = [...new Set(loadedFiles.map(f=>f.name))].join(', ');
+  return `You are an Account Health Agent. You analyze customer account data to identify churn risk, renewal urgency, and recommended next actions.
 
-The dataset has these fields: ${mappedFields}.
+Data sources loaded: ${sources}
+Total accounts: ${accounts.length}
 
-CHURN RISK SCORING (apply when data is available):
+CHURN RISK SCORING:
 - Days until renewal ≤ 30: +40 pts | 31–90 days: +20 pts
 - Days since contact ≥ 90: +35 pts | 60–89 days: +20 pts | 45–59 days: +10 pts
-- Only 1 product: +15 pts | Score ≥ 55: HIGH | 30–54: MEDIUM | < 30: LOW
+- Only 1 product: +15 pts
+- Score ≥ 55: HIGH | 30–54: MEDIUM | < 30: LOW
 
-If renewal days or contact days are missing, use available signals and note limitations.
-Be flexible — adapt your analysis to whatever fields exist in the data.
+Each account has a _source field showing which file it came from. Reference this when relevant.
+Adapt your analysis to whatever fields are available. If a field is missing, skip that part of the scoring and note it.
 
 Respond ONLY with valid JSON — no markdown, no extra text:
 {
@@ -608,25 +604,23 @@ Respond ONLY with valid JSON — no markdown, no extra text:
   "summary": "2–3 sentence plain-English findings. Use **bold** around key numbers/names.",
   "heading": "Short result heading e.g. '7 accounts at high risk'",
   "accounts": [{
-    "name":"","industry":"","mrr":0,
-    "renewalDays":0,"daysSinceContact":0,"products":"",
-    "region":"",
+    "name":"","industry":"","mrr":0,"renewalDays":0,
+    "daysSinceContact":0,"products":"","region":"","source":"",
     "riskScore":0,"riskLevel":"high|medium|low",
     "action":"Specific 1–2 sentence recommended next action."
   }]
 }
-Max 8 accounts, most urgent first. If a field is missing set it to null.`;
+Max 8 accounts, most urgent first.`;
 }
 
-// ─── CLAUDE API ───────────────────────────────────────────────────────────────
 async function askClaude(q) {
   const r = await fetch('https://api.anthropic.com/v1/messages', {
     method:'POST',
-    headers:{ 'Content-Type':'application/json', 'x-api-key':CLAUDE_KEY, 'anthropic-version':'2023-06-01', 'anthropic-dangerous-direct-browser-access':'true' },
+    headers:{'Content-Type':'application/json','x-api-key':CLAUDE_KEY,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
     body: JSON.stringify({
       model:'claude-sonnet-4-6', max_tokens:2000,
       system: buildSystem(),
-      messages:[{ role:'user', content:`Account data (${accounts.length} accounts):\n\n${JSON.stringify(accounts,null,2)}\n\nQuestion: ${q}` }]
+      messages:[{role:'user', content:`Account data:\n\n${JSON.stringify(accounts,null,2)}\n\nQuestion: ${q}`}]
     })
   });
   if (!r.ok) { const e=await r.json().catch(()=>({})); throw new Error(e.error?.message||`Claude API ${r.status}`); }
@@ -634,7 +628,7 @@ async function askClaude(q) {
   return JSON.parse(d.content[0].text.replace(/```json|```/g,'').trim());
 }
 
-// ─── RENDER ───────────────────────────────────────────────────────────────────
+// ── RENDER ────────────────────────────────────────────────────────────────────
 function render(p) {
   let h='';
   h+=`<div class="thinking-block"><div class="thinking-head"><span style="width:10px;height:10px;border:1.5px solid var(--border);border-radius:50%;display:inline-block"></span> Agent reasoning</div><div class="thinking-body">${x(p.thinking)}</div></div>`;
@@ -643,21 +637,21 @@ function render(p) {
     h+=`<div class="section-heading">${x(p.heading)}</div>`;
     p.accounts.forEach(a=>{
       const lv=a.riskLevel||'low', badge=lv==='high'?'High risk':lv==='medium'?'Medium risk':'Low risk';
-      const hasMRR      = a.mrr != null;
-      const hasRenewal  = a.renewalDays != null;
-      const hasContact  = a.daysSinceContact != null;
       h+=`<div class="account-card ${lv}">
         <div class="card-top">
-          <div><div class="acct-name">${x(a.name)}</div>
-          <div class="acct-meta">${a.industry?x(a.industry):''}${a.region?' · '+x(a.region):''}${a.riskScore?' · Score: '+a.riskScore:''}</div></div>
+          <div>
+            <div class="acct-name">${x(a.name)}</div>
+            <div class="acct-meta">${[a.industry,a.region,a.riskScore?'Score: '+a.riskScore:''].filter(Boolean).map(x).join(' · ')}</div>
+            ${a.source?`<div class="source-tag">📄 ${x(a.source)}</div>`:''}
+          </div>
           <div class="risk-badge ${lv}">${badge}</div>
         </div>
         <div class="stats-grid">
-          ${hasMRR     ?`<div class="stat"><div class="stat-lbl">Revenue</div><div class="stat-val">$${Number(a.mrr).toLocaleString()}</div></div>`:''}
-          ${hasRenewal ?`<div class="stat"><div class="stat-lbl">Renewal</div><div class="stat-val">${a.renewalDays}d</div></div>`:''}
-          ${hasContact ?`<div class="stat"><div class="stat-lbl">Last contact</div><div class="stat-val">${a.daysSinceContact}d ago</div></div>`:''}
+          ${a.mrr!=null?`<div class="stat"><div class="stat-lbl">Revenue</div><div class="stat-val">$${Number(a.mrr).toLocaleString()}</div></div>`:''}
+          ${a.renewalDays!=null?`<div class="stat"><div class="stat-lbl">Renewal</div><div class="stat-val">${a.renewalDays}d</div></div>`:''}
+          ${a.daysSinceContact!=null?`<div class="stat"><div class="stat-lbl">Last contact</div><div class="stat-val">${a.daysSinceContact}d ago</div></div>`:''}
         </div>
-        ${a.products?`<div class="products-row"><div class="stat-lbl">Products / Services</div><div class="stat-val" style="font-size:11px">${x(a.products)}</div></div>`:''}
+        ${a.products?`<div class="products-row"><div class="stat-lbl">Products</div><div class="stat-val" style="font-size:11px">${x(a.products)}</div></div>`:''}
         <div class="action-row">💡 ${x(a.action)}</div>
       </div>`;
     });
@@ -668,28 +662,25 @@ function render(p) {
 function renderErr(msg) { document.getElementById('results').innerHTML=`<div class="error-card"><b>Error</b><br>${x(msg)}</div>`; }
 function x(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
-// ─── CHAT ─────────────────────────────────────────────────────────────────────
+// ── CHAT ──────────────────────────────────────────────────────────────────────
 function addMsg(role,content,typing) {
   const msgs=document.getElementById('messages'), d=document.createElement('div');
   d.className='msg '+role;
-  if(typing) {
-    d.innerHTML=`<div class="msg-label">Agent</div><div class="bubble"><div class="typing-dots"><span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span></div></div>`;
-  } else {
-    d.innerHTML=`<div class="msg-label">${role==='user'?'You':'Agent'}</div><div class="bubble">${content}</div>`;
-  }
+  if(typing) d.innerHTML=`<div class="msg-label">Agent</div><div class="bubble"><div class="typing-dots"><span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span></div></div>`;
+  else d.innerHTML=`<div class="msg-label">${role==='user'?'You':'Agent'}</div><div class="bubble">${content}</div>`;
   msgs.appendChild(d); msgs.scrollTop=msgs.scrollHeight; return d;
 }
 
 async function send() {
   if (loading) return;
-  if (!accounts.length) { addMsg('agent','Please import your data first — click <b>📂 Import data</b> in the top right.'); return; }
+  if (!accounts.length) { addMsg('agent','Please import your data first — click <b>📂 Manage data</b> in the top right.'); return; }
   const inp=document.getElementById('chat-input'), q=inp.value.trim(); if(!q)return;
   loading=true; inp.value=''; inp.style.height='auto';
   document.getElementById('send-btn').disabled=true;
   document.getElementById('chips').style.display='none';
   addMsg('user',x(q));
   const typing=addMsg('agent','',true);
-  document.getElementById('results').innerHTML=`<div class="thinking-block"><div class="thinking-head"><div class="spinner"></div> Claude is analyzing ${accounts.length} accounts…</div></div>`;
+  document.getElementById('results').innerHTML=`<div class="thinking-block"><div class="thinking-head"><div class="spinner"></div> Claude is analyzing ${accounts.length} accounts across ${loadedFiles.length} file${loadedFiles.length>1?'s':''}…</div></div>`;
   try {
     const p=await askClaude(q);
     typing.querySelector('.bubble').textContent=p.summary.replace(/\*\*(.+?)\*\*/g,'$1');
